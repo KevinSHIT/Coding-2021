@@ -9,19 +9,22 @@ public class DegreeClassBoundary
 {
     private String classOfDegree;
     private byte minPercentage;
-    
-    public DegreeClassBoundary(String classOfDegreeIn, byte minPercentageIn) {
+
+    public DegreeClassBoundary(String classOfDegreeIn, byte minPercentageIn)
+    {
         classOfDegree = classOfDegreeIn;
         minPercentage = minPercentageIn;
     }
-    
-    public String getClassOfDegree() {
+
+    public String getClassOfDegree()
+    {
         return classOfDegree;
     }
-    
-    public byte getMinPercentage() {
+
+    public byte getMinPercentage()
+    {
         return minPercentage;
     }
 
-    
+
 }
