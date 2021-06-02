@@ -1,0 +1,22 @@
+Student Code   Family name         First name          Percentage     Degree Class
+
+0003           Anderson            Callum              69.0%          Lower Second Hons
+
+0007           Bond                James               87.3%          First Hons
+
+0017           Brown               John                73.3%          Upper Second Hons
+
+0015           Jensen              Julia               87.2%          First Hons
+
+0012           Lau                 Mary                53.5%          Third Hons
+
+0014           Mann                Andrew              63.2%          Lower Second Hons
+
+0002           Morgan              Alison              60.3%          Lower Second Hons
+
+0005           Patel               Jayesh              87.3%          First Hons
+
+0009           Sharpe              Karen               39.7%          Fail
+
+0001           Smith               Jim                 41.7%          Pass
+
