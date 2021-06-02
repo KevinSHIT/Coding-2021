@@ -12,4 +12,5 @@ del /q "*.txt"
 :: rebuild bluej file
 del /q "package.bluej"
 type nul > "package.bluej"
+cd ..
 xcopy assets src /e /Y /d

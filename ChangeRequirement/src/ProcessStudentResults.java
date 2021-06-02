@@ -250,13 +250,19 @@ public class ProcessStudentResults
 
             FileWriter fstream = new FileWriter(file, false);
             BufferedWriter bufWriter = new BufferedWriter(fstream);
-            // o The slip will contain all their details, their overall grade and their honours degree. 
-            bufWriter.write("Stu Code FamilyName FirstName Overall Degree");
+            // o The slip will contain all their details, their overall grade and their honours degree.
+            bufWriter.write(
+                pad("Student Code", 15) +
+                pad("Family name", 20) +
+                pad("First name", 20) +
+                pad("Percentage", 15) +
+                "Degree Class");
             bufWriter.newLine();
-            bufWriter.write(rs.getStudentCode() + " " +
-                rs.getFamilyName() + " " +
-                rs.getFirstName() + " " +
-                rs.getOverallPercentage() + " " +
+            bufWriter.write(
+                pad(rs.getStudentCode(), 15) +
+                pad(rs.getFamilyName(), 20) + 
+                pad(rs.getFirstName(), 20) +
+                pad(String.format("%.1f", rs.getOverallPercentage()) + "%", 15) +
                 rs.getDegreeClass());
             bufWriter.close();
             fstream.close();
