@@ -39,7 +39,7 @@ public class ProcessStudentResults
     private int findTotalMark(List<String> fields)
     {
         // Given a list of fields from the marks file
-        // Add up the last six fields which contain the unit marks
+        // Add up the last seven fields which contain the unit marks
         int total = 0;
         for (int i = FIRST_MARK_FIELD; i < fields.size(); i++)
         {
