@@ -94,6 +94,22 @@ public class ProcessStudentResults
         return degreeClassBoundaries;
     }
 
+    /**
+     * TODO: Requirement 2
+     * @param fields
+     * @return
+     */
+    private boolean verifyMark(List<String> fields)
+    {
+        for (int i = FIRST_MARK_FIELD; i < fields.size(); i++)
+        {
+            int mark = Integer.parseInt(fields.get(i));
+            if (mark > 100 || mark < 0)
+                return false;
+        }
+        return true;
+    }
+
     private StudentResultList populateStudentResults(String fileName, ArrayList<DegreeClassBoundary> boundaries)
     {
         // Read in marks for each paper, average them, and the degree class based on the average mark
@@ -119,7 +135,8 @@ public class ProcessStudentResults
             {
                 fields = Arrays.asList(line.split(","));
 
-                if (fields.size() != FIRST_MARK_FIELD + PAPERS_NUMBER)
+                if (fields.size() != FIRST_MARK_FIELD + PAPERS_NUMBER  ||
+                    !verifyMark(fields)) // FIXME: Requirement 2
                 {
                     // FIXME: Requirement 1, change to 7, add a verify
                     line = myBuffer.readLine();
