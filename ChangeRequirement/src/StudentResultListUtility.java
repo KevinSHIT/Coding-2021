@@ -33,7 +33,6 @@ public class StudentResultListUtility
         }
         
         StudentResultList srl = new StudentResultList();
-        srl.addStudentResult(al.get(1));
         for (StudentResult sr : al)
         {
             srl.addStudentResult(sr);
