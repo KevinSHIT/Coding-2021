@@ -20,6 +20,7 @@ public class ProcessStudentResults
     final String BOUNDARY_FILE = "boundaries.csv";
     final String MARKS_FILE = "marks.csv";
     final String GRADES_FILE = "student_grades.txt";
+    final String GRADES_OVERALL_FILE = "student_grades_overall.txt";
     final String STATS_FILE = "statistics.txt";
     // TODO: Requirement 1: Change to 7
     final int MAX_MARK_ALL_PAPERS = PAPERS_NUMBER * 100; // 6 * 100
@@ -234,7 +235,7 @@ public class ProcessStudentResults
     public ProcessStudentResults()
     {
         ArrayList<DegreeClassBoundary> degreeClassBoundaries;
-        StudentResultList myStudentResults, myStudentResultsSortedByFamily;
+        StudentResultList myStudentResults, myStudentResultsSortedByFamily, myStudentResultsSortedByOverall;
 
         System.out.println("Started");
 
@@ -247,6 +248,10 @@ public class ProcessStudentResults
         System.out.println("Outputing student results");
         myStudentResultsSortedByFamily = myStudentResults.sortByFamilyName();
         outputResultsToFile(myStudentResultsSortedByFamily, GRADES_FILE);
+
+        System.out.println("Outputing student result by overall");
+        myStudentResultsSortedByOverall = StudentResultListUtility.sortByStudentOverall(myStudentResults);
+        outputResultsToFile(myStudentResultsSortedByOverall, GRADES_OVERALL_FILE);
 
         System.out.println("Outputing statistics");
         outputStatisticsToFile(myStudentResults, STATS_FILE);
