@@ -21,8 +21,10 @@ public class ProcessStudentResults
     final String MARKS_FILE = "marks.csv";
     final String GRADES_FILE = "student_grades.txt";
     final String STATS_FILE = "statistics.txt";
-    final int MAX_MARK_ALL_PAPERS = 600; // 6 * 100
+    // TODO: Requirement 1: Change to 7
+    final int MAX_MARK_ALL_PAPERS = PAPERS_NUMBER * 100; // 6 * 100
     final int FIRST_MARK_FIELD = 3;
+    final static int PAPERS_NUMBER = 7;
 
     private String pad(String str, int len)
     {
@@ -116,6 +118,12 @@ public class ProcessStudentResults
             while (line != null)
             {
                 fields = Arrays.asList(line.split(","));
+
+                if (fields.size() != FIRST_MARK_FIELD + PAPERS_NUMBER)
+                {
+                    // FIXME: Requirement 1, change to 7, add a verify
+                    continue;
+                }
 
                 totalThisStudent = findTotalMark(fields);
                 percentageThisStudent = ((float) totalThisStudent) / MAX_MARK_ALL_PAPERS * 100;
