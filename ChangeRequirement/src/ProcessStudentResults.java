@@ -232,6 +232,41 @@ public class ProcessStudentResults
         }
     }
 
+    public void outputStudentResultToFile(StudentResultList rsl)
+    {
+        ArrayList<StudentResult> al = StudentResultListUtility.getArrayList(rsl);
+        for (StudentResult rs : al)
+        {
+            outputStudentResultToFile(rs);
+        }
+    }
+    
+    public void outputStudentResultToFile(StudentResult rs)
+    {
+        try 
+        {
+            File file = new File(rs.getStudentCode() + ".txt");
+            file.createNewFile();
+
+            FileWriter fstream = new FileWriter(file, false);
+            BufferedWriter bufWriter = new BufferedWriter(fstream);
+            // o The slip will contain all their details, their overall grade and their honours degree. 
+            bufWriter.write("Stu Code FamilyName FirstName Overall Degree");
+            bufWriter.newLine();
+            bufWriter.write(rs.getStudentCode() + " " +
+                rs.getFamilyName() + " " +
+                rs.getFirstName() + " " +
+                rs.getOverallPercentage() + " " +
+                rs.getDegreeClass());
+            bufWriter.close();
+            fstream.close();
+        }
+        catch(Exception ex)
+        {
+            // ignore
+        }
+    }
+
     public ProcessStudentResults()
     {
         ArrayList<DegreeClassBoundary> degreeClassBoundaries;
@@ -252,6 +287,9 @@ public class ProcessStudentResults
         System.out.println("Outputing student result by overall");
         myStudentResultsSortedByOverall = StudentResultListUtility.sortByStudentOverall(myStudentResults);
         outputResultsToFile(myStudentResultsSortedByOverall, GRADES_OVERALL_FILE);
+
+        System.out.println("Outputing student result to each file");
+        outputStudentResultToFile(myStudentResultsSortedByFamily);
 
         System.out.println("Outputing statistics");
         outputStatisticsToFile(myStudentResults, STATS_FILE);
