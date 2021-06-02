@@ -280,18 +280,18 @@ public class ProcessStudentResults
         System.out.println("Reading student marks");
         myStudentResults = populateStudentResults(MARKS_FILE, degreeClassBoundaries);
 
-        System.out.println("Outputing student results");
+        System.out.println("Outputting student results");
         myStudentResultsSortedByFamily = myStudentResults.sortByFamilyName();
         outputResultsToFile(myStudentResultsSortedByFamily, GRADES_FILE);
 
-        System.out.println("Outputing student result by overall");
+        System.out.println("Outputting student result by overall");
         myStudentResultsSortedByOverall = StudentResultListUtility.sortByStudentOverall(myStudentResults);
         outputResultsToFile(myStudentResultsSortedByOverall, GRADES_OVERALL_FILE);
 
-        System.out.println("Outputing student result to each file");
+        System.out.println("Outputting student result to each file");
         outputStudentResultToFile(myStudentResultsSortedByFamily);
 
-        System.out.println("Outputing statistics");
+        System.out.println("Outputting statistics");
         outputStatisticsToFile(myStudentResults, STATS_FILE);
 
         System.out.println("Done");
