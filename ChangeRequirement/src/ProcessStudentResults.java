@@ -122,6 +122,7 @@ public class ProcessStudentResults
                 if (fields.size() != FIRST_MARK_FIELD + PAPERS_NUMBER)
                 {
                     // FIXME: Requirement 1, change to 7, add a verify
+                    line = myBuffer.readLine();
                     continue;
                 }
 
