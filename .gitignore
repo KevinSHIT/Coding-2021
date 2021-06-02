@@ -1,0 +1,11 @@
+# IDEs
+.vscode
+.idea
+.vs
+
+# BlueJ
+.class
+.ctxt
+
+# Binary
+.exe
