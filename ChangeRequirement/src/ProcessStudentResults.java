@@ -232,6 +232,10 @@ public class ProcessStudentResults
         }
     }
 
+    /**
+     * Write all Student Result separately into file. Filename is student ID.
+     * @param rsl
+     */
     public void outputStudentResultToFile(StudentResultList rsl)
     {
         ArrayList<StudentResult> al = StudentResultListUtility.getArrayList(rsl);
@@ -241,16 +245,21 @@ public class ProcessStudentResults
         }
     }
     
+    /**
+     * Write a Student Result into file. Filename is student ID.
+     * @param rs
+     */
     public void outputStudentResultToFile(StudentResult rs)
     {
         try 
         {
+            // Create file
             File file = new File(rs.getStudentCode() + ".txt");
             file.createNewFile();
 
             FileWriter fstream = new FileWriter(file, false);
             BufferedWriter bufWriter = new BufferedWriter(fstream);
-            // o The slip will contain all their details, their overall grade and their honours degree.
+            
             bufWriter.write(
                 pad("Student Code", 15) +
                 pad("Family name", 20) +
