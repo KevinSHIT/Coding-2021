@@ -58,7 +58,7 @@ public class Board
             return;
 
         // Horizontal
-        List<Integer> col = new ArrayList<>();
+        List<Integer> col = new ArrayList<Integer>();
         for (int x = 0; x < WIDTH; ++x)
         {
             col.add(grid[x][yIn]);
@@ -67,7 +67,7 @@ public class Board
             return;
 
         // Cross
-        List<int[]> l = new ArrayList<>();
+        List<int[]> l = new ArrayList<int[]>();
         // Left corner
         int min = Math.min(xIn, yIn);
         l.add(getLines(new Coordinate(xIn - min, yIn - min), Direction.CrossRightUp));
@@ -90,7 +90,7 @@ public class Board
 
     private int[] getLines(Coordinate start, IFunc<Coordinate, Coordinate> direct)
     {
-        List<Integer> l = new ArrayList<>();
+        List<Integer> l = new ArrayList<Integer>();
         l.add(grid[start.getX()][start.getY()]);
         while (true)
         {

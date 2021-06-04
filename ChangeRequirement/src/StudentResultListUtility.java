@@ -5,7 +5,7 @@ public class StudentResultListUtility
 
     public static ArrayList<StudentResult> getArrayList(StudentResultList resultList)
     {
-        ArrayList<StudentResult> al = new ArrayList<>();
+        ArrayList<StudentResult> al = new ArrayList<StudentResult>();
         for (int i = 0; i < resultList.size(); ++i)
         {
             al.add(resultList.get(i));
