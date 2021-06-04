@@ -1,4 +1,4 @@
-package Controllers;
+package Game;
 
 /**
  * 表示对立两方

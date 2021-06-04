@@ -1,4 +1,4 @@
-package Controllers;
+package Game;
 
 public enum GameStatus
 {

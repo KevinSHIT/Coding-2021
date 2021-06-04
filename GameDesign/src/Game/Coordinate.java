@@ -1,4 +1,4 @@
-package Controllers;
+package Game;
 
 /**
  * 坐标类，用于记录x和y值

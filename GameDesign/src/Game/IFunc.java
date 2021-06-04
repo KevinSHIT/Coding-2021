@@ -1,4 +1,4 @@
-package Controllers;
+package Game;
 
 /**
  * 类似于C#的Func设计
