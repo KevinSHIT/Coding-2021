@@ -1,7 +1,7 @@
 package Game;
 
 /**
- * 坐标类，用于记录x和y值
+ * Coordinate, for record x and y
  */
 public class Coordinate
 {

@@ -64,7 +64,7 @@ public class FrmMain extends JFrame implements ActionListener
 
     private void askForRestartGame()
     {
-        if (JOptionPane.showConfirmDialog(this, board.getGameStatus() + ". Do you want toi restart the game?",
+        if (JOptionPane.showConfirmDialog(this, board.getGameStatus() + ". Do you want to restart the game?",
             "Game Result",  JOptionPane.YES_NO_OPTION) == 0)
         {
             board.restartGame();
@@ -94,7 +94,7 @@ public class FrmMain extends JFrame implements ActionListener
     }
 
     /**
-     * 刷新按钮背景
+     * Refresh buttons background.
      */
     private void flush()
     {
@@ -117,7 +117,8 @@ public class FrmMain extends JFrame implements ActionListener
             }
         }
 
-        // REFER: https://bbs.csdn.net/topics/10164199
+        // To add a blank line, we could add <br />
+        // REFER: https://stackoverflow.com/questions/6635730/how-do-i-put-html-in-a-jlabel-in-java
         lblGameStatus.setText("<html><body>" +
                 "Current Player: " + Player.toString(board.getCurrentPlayer()) + "<br/>" +
                 "Game Status: " + board.getGameStatus() +

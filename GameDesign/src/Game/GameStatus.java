@@ -2,8 +2,8 @@ package Game;
 
 public enum GameStatus
 {
-    RedWin("Red Win"),
-    BlackWin("Black Win"),
+    RedWin("Red Won"),
+    BlackWin("Black Won"),
     Draw("Draw"),
     Gaming("Gaming");
 

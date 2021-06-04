@@ -1,7 +1,6 @@
 package Game;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Board
@@ -12,7 +11,6 @@ public class Board
     GameStatus status;
     int current;
 
-    //region getter
     public GameStatus getGameStatus()
     {
         return status;
@@ -27,7 +25,6 @@ public class Board
     {
         return current;
     }
-    //endregion
 
     public Board()
     {
@@ -45,7 +42,8 @@ public class Board
     public void updateGameStatus(int xIn)
     {
         int yIn = 0;
-        // 获取最上层的坐标
+        // Get the upperest the item of the column
+        // this will be the user input
         for (int y = HEIGHT - 1; y >= 0; --y)
         {
             if (grid[xIn][y] !=0)
@@ -129,6 +127,9 @@ public class Board
         return false;
     }
 
+    /**
+     * Check win status by lines
+     */
     private int isWin(int[] lines)
     {
         if (lines.length < 4)

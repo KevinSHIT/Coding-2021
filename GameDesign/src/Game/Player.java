@@ -1,8 +1,8 @@
 package Game;
 
 /**
- * 表示对立两方
- * 认为两方分别为1和-1，如果需要反转只需要进行-选项即可
+ * Represent the opposite player.
+ * If want to reverse player, we can just use minus to represent.
  */
 public class Player
 {
