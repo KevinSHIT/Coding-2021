@@ -64,7 +64,8 @@ public class FrmMain extends JFrame implements ActionListener
 
     private void askForRestartGame()
     {
-        if (JOptionPane.showConfirmDialog(this, board.getGameStatus()) == 0)
+        if (JOptionPane.showConfirmDialog(this, board.getGameStatus() + ". Do you want toi restart the game?",
+            "Game Result",  JOptionPane.YES_NO_OPTION) == 0)
         {
             board.restartGame();
             flush();
