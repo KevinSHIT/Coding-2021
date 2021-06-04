@@ -83,7 +83,7 @@ public class FrmMain extends JFrame implements ActionListener
         }
 
         int x = Integer.parseInt(e.getActionCommand());
-        if (board.move(x))
+        if (board.move(x)) // check is valid move
         {
             flush();
             if (board.getGameStatus() != GameStatus.Gaming)
@@ -103,7 +103,7 @@ public class FrmMain extends JFrame implements ActionListener
         {
             for (int y = 0; y < Board.HEIGHT; ++y)
             {
-                Color c = Color.WHITE;
+                Color c = Color.WHITE; // default colour is white
                 switch (boardData[x][y])
                 {
                     case -1:
