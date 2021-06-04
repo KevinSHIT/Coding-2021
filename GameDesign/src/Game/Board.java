@@ -65,7 +65,6 @@ public class Board
         {
             col.add(grid[x][yIn]);
         }
-        System.out.println(Arrays.toString(convertToIntArray(col)));
         if (updatePlayerStatus(isWin(convertToIntArray(col))))
             return;
 
